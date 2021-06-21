@@ -1,0 +1,14 @@
+Package: depstats
+Type: Package
+Title: An Integrated Environment for Dependence Statistics
+Version: 1.4.0
+Author: Ivan Muyun Zou [aut, cre], Ardi Wira Sudarmo [ctb]
+Maintainer: Ivan Muyun Zou <ivanmyzou@gmail.com>
+Description: A collection of dependence structures, dependence measures, dependence tests and relevant tools for comparative studies.
+Depends: R (>= 4.0.0), foreach, MASS, acepack, testforDEP, energy, HellCor, dHSIC, entropy, EDMeasure, minerva, HHG
+Imports: foreach, MASS, acepack, testforDEP, energy, HellCor, dHSIC, entropy, EDMeasure, minerva, HHG
+Suggests: keras
+License: MIT 
+Encoding: UTF-8
+LazyData: true  
+RoxygenNote: 7.1.1
