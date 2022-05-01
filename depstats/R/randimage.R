@@ -1,5 +1,6 @@
 #' Sample Generator from Image
 #'
+#' @description
 #' Produce a sample with probability determined by greyscale pixels of an image
 #' @param n size of the sample (number of bivaraite data pairs).
 #' @param image an image object (under imager package).

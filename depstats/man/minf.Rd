@@ -4,7 +4,7 @@
 \alias{minf}
 \title{Information Correlation Coefficient}
 \usage{
-minf(X, b1 = 10, b2 = 10)
+minf(X)
 }
 \description{
 Information Correlation Coefficient

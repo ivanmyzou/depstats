@@ -1,24 +1,25 @@
-#' LaTex Table Codes Printing
+#' Print Power Tables for LaTex
 #'
-#' @param PowersSummary powers summary table from powerssummary().
-#' @param title title of the table.
-#' @param rows row names.
-#' @param cuts indices for table separation.
-#' @param cols column names.
+#'
+#' @description This function is prints power tables for LaTex.
+#' @param Powers the matrix of powers of competitors (cols) over test scenarios (rows).
+#' @param Group names of the test scenarios.
+#' @param sizes a vector of smaple sizes.
+#' @param nspecial number of models assessed.
 #' @param decimals number of decimals to be printed.
-#' @examples
-#' plotpowers(addPowers[11+seq(0,65,11),],'Additional Test 7')
+#' @name latexpowers
 
-defaultcol = c('allnet','allCNN','scoreonly','imageonly',
-               'ACE','AUK','Blom','dcor','EDC','Hell','Hoeff','HSIC',
+
+defaultcol = c('combined','score','image',
+               'ACE','AUK','Blom','dcor','Hell','Hoeff','HSIC',
                'Info','Ken','Martdiff','MIC','Rand','Spear',
-               'ddrV','ddrTS2','hhgPsum','hhgGsum','hhgPmax','hhgGmax',
+               'ddrV','ddrTS2','hhgPs','hhgGs','hhgPm','hhgGm',
                "avgPower","bestPower","avgGap","worstGap",
-               "allnet gap","allCNN gap","scoreonly gap", "imageonly gap")
+               "combined gap","score gap","image gap")
 defaultrow = c('n = 30','n = 50','n = 100','n = 200','n = 300','n = 400')
 
-latexpowers <- function(Powers,Group,sizes=c(30,50,100,200,300,400),nspecial = 4,
-                        decimals=3){
+latexpowers <- function(Powers, Group, sizes = c(30,50,100,200,300,400), nspecial = 3,
+                        decimals = 3){ #Powers is a matrix by test scenarios and then by sample sizes
   ngroup = length(Group)
   nsize = length(sizes)
 
@@ -27,7 +28,7 @@ latexpowers <- function(Powers,Group,sizes=c(30,50,100,200,300,400),nspecial = 4
   cat(paste("\\begin{tabular}{ m{1.5cm} m{0.75cm}  ",
             paste(rep(sprintf("c"), nspecial), sep = "", collapse = " "),
             paste(rep(sprintf("c"), ncol(Powers) - nspecial), sep = "", collapse = " "), "}\n",
-            sep = "")) # 2
+            sep = " ")) # 2
   cat("\\hline\n")
 
   ##columns of the table

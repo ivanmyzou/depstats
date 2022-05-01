@@ -15,5 +15,5 @@
 \item{printall}{(TRUE/FALSE) default being FALSE would give a progress bar, if TRUE prints out the number progress.}
 }
 \description{
-Applications over Samples
+This function is used to compute features (competitor scores or image greyscale pixels)
 }
